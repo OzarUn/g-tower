@@ -15,12 +15,7 @@
       <v-card-text style="font-size: 1.2rem">
         <ul v-for="item in items" :key="item" style="margin-bottom: 0.3rem">
           <div class="d-flex">
-            <v-img
-              contain
-              max-width="10px"
-              class="mr-3"
-              :src="'https://g-tower.com/dot.png'"
-            ></v-img>
+            <v-img contain max-width="10px" class="mr-3" :src="'https://g-tower.com/dot.png'"></v-img>
             <span style="font-weight: 500; font-size: 1rem; color: #0e0e0e">
               {{ item }}
             </span>

@@ -1,6 +1,6 @@
 <template>
   <v-row class="ma-0" v-resize="onResize">
-    <v-col style="padding: 12 !improtant" class="d-flex" cols="12">
+    <v-col style="padding: 12 !important" class="d-flex" cols="12">
       <v-card-title class="mainTitle">Contact Us</v-card-title>
     </v-col>
     <v-col class="centerize" cols="12">

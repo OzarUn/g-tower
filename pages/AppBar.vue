@@ -1,101 +1,46 @@
 <template>
-  <v-app-bar
-    min-height="12vh"
-    width="100vw"
-    v-resize="onResize"
-    app
-    class="ma-0 pa-0"
-  >
+  <v-app-bar min-height="12vh" width="100vw" v-resize="onResize" app class="ma-0 pa-0">
     <v-row class="mainRow">
       <v-col cols="1" class="centerize imageSize">
-        <v-img
-          :max-height="
-            windowWidth < 700 ? '130%' : largeScreen ? '90%' : '100%'
-          "
-          :max-width="windowWidth < 700 ? '130%' : largeScreen ? '90%' : '100%'"
-          contain
-          :src="'https://g-tower.com/main-logo.svg'"
-        ></v-img>
+        <v-img :max-height="windowWidth < 700 ? '130%' : largeScreen ? '90%' : '100%'
+          " :max-width="windowWidth < 700 ? '130%' : largeScreen ? '90%' : '100%'" contain
+          :src="'https://g-tower.com/main-logo.svg'"></v-img>
       </v-col>
+      <div class="ma-0 pa-0">
+        <LocaleSwitcher />
+      </div>
 
       <!-- mobile -->
       <v-col v-if="appBarSize" class="centerize" cols="8">
         <v-card text flat class="mx-auto" max-width="70vw">
           <v-slide-group style="background-color: #f5f5f5" multiple show-arrows>
-            <v-slide-item
-              v-for="item in items"
-              :key="item.route"
-              v-slot="{ active }"
-            >
-              <v-btn
-                class="mx-2 buttonFont"
-                depressed
-                text
-                small
-                :input-value="active"
-                active-class="purple white--text"
-                @click="routePage(item.route)"
-              >
+            <v-slide-item v-for="item in items" :key="item.route" v-slot="{ active }">
+              <v-btn class="mx-2 buttonFont" depressed text small :input-value="active"
+                active-class="purple white--text" @click="routePage(item.route)">
                 {{ item.name }}
               </v-btn>
             </v-slide-item>
-            <v-btn
-              color="#43D000"
-              class="buttonFont"
-              small
-              @click="routePage('contactUs')"
-              ><span style="color: white"> Contact Us</span></v-btn
-            >
+            <v-btn color="#43D000" class="buttonFont" small @click="routePage('contactUs')"><span style="color: white">
+                Contact Us</span></v-btn>
           </v-slide-group>
         </v-card>
       </v-col>
 
       <!-- large screen -->
-      <v-col
-        v-if="!appBarSize"
-        cols="8"
-        :class="largeScreen ? 'largeScreen' : 'centerize'"
-      >
-        <v-btn
-          v-for="item in items"
-          :key="item.route"
-          depressed
-          text
-          small
-          class="buttonFont"
-          @click="routePage(item.route)"
-          >{{ item.name }}</v-btn
-        >
-        <v-btn
-          color="#43D000"
-          class="buttonFont"
-          small
-          @click="routePage('contactUs')"
-          ><span style="color: white"> Contact Us</span></v-btn
-        >
+      <v-col v-if="!appBarSize" cols="8" :class="largeScreen ? 'largeScreen' : 'centerize'">
+
+        <v-btn v-for="item in items" :key="item.route" depressed text small class="buttonFont"
+          @click="routePage(item.route)">{{ item.name }}</v-btn>
+        <v-btn color="#43D000" class="buttonFont" small @click="routePage('contactUs')"><span style="color: white">
+            Contact Us</span></v-btn>
         <div class="ma-0 pa-0">
-          <v-divider
-            class="mx-4"
-            style="color: #0a1551 !important"
-            inset
-            vertical
-          ></v-divider>
+          <v-divider class="mx-4" style="color: #0a1551 !important" inset vertical></v-divider>
         </div>
 
-        <a
-          style="text-decoration: none"
-          target="_blank"
-          href="https://www.linkedin.com/company/g-tower/"
-        >
-          <v-icon class="mr-4" large style="color: #0a1551"
-            >mdi-linkedin</v-icon
-          >
+        <a style="text-decoration: none" target="_blank" href="https://www.linkedin.com/company/g-tower/">
+          <v-icon class="mr-4" large style="color: #0a1551">mdi-linkedin</v-icon>
         </a>
-        <a
-          style="text-decoration: none"
-          target="_blank"
-          href="https://www.youtube.com/@g-tower6904"
-        >
+        <a style="text-decoration: none" target="_blank" href="https://www.youtube.com/@g-tower6904">
           <v-icon large style="color: #0a1551">mdi-youtube</v-icon>
         </a>
       </v-col>
@@ -105,10 +50,16 @@
 
 <script>
 import vue from 'vue'
+import LocaleSwitcher from "@/components/LocaleSwitcher"
+import i18n from "@/i18n"
+
+console.log("Active locale: ", i18n.locale)
+
 const VueScrollTo = require('vue-scrollto')
 vue.use(VueScrollTo)
 
 export default {
+  components: { LocaleSwitcher },
   props: {
     marketing: Boolean,
   },
@@ -118,6 +69,7 @@ export default {
       appBarSize: false,
       largeScreen: false,
       items: [
+
         { name: 'Home', route: 'home' },
         { name: 'Services', route: 'services' },
         { name: 'Projects', route: 'projects' },
@@ -136,6 +88,9 @@ export default {
     }
   },
   methods: {
+    setLocale(locale) {
+      this.$i18n.locale = locale
+    },
     onResize() {
       this.windowWidth = window.innerWidth
       window.innerWidth < 970
@@ -197,6 +152,7 @@ export default {
 .v-btn {
   text-transform: unset !important;
 }
+
 ::v-deep .v-toolbar__content {
   padding: 0px !important;
   margin: 0px !important;
@@ -208,11 +164,13 @@ export default {
   height: 5vh;
   margin-bottom: 0.2rem;
 }
+
 .mainRow {
   height: 12vh;
   width: 100%;
   justify-content: space-around;
 }
+
 .centerize {
   margin: 0;
   padding: 0;

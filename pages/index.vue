@@ -1,15 +1,7 @@
 <template>
   <v-row v-resize="onResize" class="mainRow">
-    <v-col
-      style="height: 100%; margin: 0; margin-top: 2rem !important"
-      class="pa-0"
-      cols="12"
-    >
-      <Banner
-        class="bannerStyle ma-0 pb-6"
-        data-aos="zoom-in"
-        @routeHome="routeHome"
-      ></Banner>
+    <v-col style="height: 100%; margin: 0; margin-top: 2rem !important" class="pa-0" cols="12">
+      <Banner class="bannerStyle ma-0 pb-6" data-aos="zoom-in" @routeHome="routeHome"></Banner>
       <v-main class="" id="services" data-aos="fade-up">
         <Services></Services>
       </v-main>
@@ -36,32 +28,19 @@
       </v-main>
     </v-col>
     <v-col class="ma-0 pa-0" cols="12">
-      <v-footer
-        color="#181818"
-        padless
-        style="display: flex; justify-content: center; margin-top: 8rem"
-      >
+      <v-footer color="#181818" padless style="display: flex; justify-content: center; margin-top: 8rem">
         <v-row class="ma-0 pa-0" style="max-width: 90%">
           <v-col cols="2">
-            <a
-              style="text-decoration: none"
-              target="_blank"
-              href="https://www.linkedin.com/company/g-tower/"
-              class="mr-3"
-            >
+            <a style="text-decoration: none" target="_blank" href="https://www.linkedin.com/company/g-tower/"
+              class="mr-3">
               <v-icon color="white">mdi-linkedin</v-icon>
             </a>
-            <a
-              style="text-decoration: none"
-              target="_blank"
-              href="https://www.youtube.com/@g-tower6904"
-            >
+            <a style="text-decoration: none" target="_blank" href="https://www.youtube.com/@g-tower6904">
               <v-icon color="white">mdi-youtube</v-icon>
             </a>
           </v-col>
           <v-col cols="10" style="display: flex; justify-content: flex-end">
-            <span
-              style="
+            <span style="
                 font-weight: 450;
                 font-size: 1rem;
                 line-height: 25px;
@@ -69,9 +48,7 @@
                 align-items: center;
 
                 color: #cecece;
-              "
-              >[© 2023] G-Tower, All Rights Reserved.</span
-            >
+              ">[© 2023] G-Tower, All Rights Reserved.</span>
           </v-col>
         </v-row>
       </v-footer>
