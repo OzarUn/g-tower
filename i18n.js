@@ -1,8 +1,8 @@
-import Vue from "vue";
-
-import VueI18n from "vue-i18n";
+import Vue from '@/setup'; 
+import VueI18n from 'vue-i18n';
 
 Vue.use(VueI18n);
+
 
 function loadLocaleMessages() {
 

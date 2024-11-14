@@ -57,6 +57,7 @@
 </template>
 
 <script>
+import Vue from '@/setup'; 
 import AppBar from './AppBar.vue'
 import Banner from './Banner.vue'
 import Services from './Services.vue'

@@ -1,6 +1,13 @@
 const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
+  configureWebpack: {
+    resolve: {
+      alias: {
+        vue$: 'vue/dist/vue.esm.js'
+      }
+    }
+  },
   pluginOptions: {
     i18n: {
       locale: "en",

@@ -49,14 +49,15 @@
 </template>
 
 <script>
-import vue from 'vue'
+import Vue from '@/setup'; 
 import LocaleSwitcher from "@/components/LocaleSwitcher"
+import VueScrollTo from 'vue-scrollto';
+
 import i18n from "@/i18n"
 
 console.log("Active locale: ", i18n.locale)
 
-const VueScrollTo = require('vue-scrollto')
-vue.use(VueScrollTo)
+Vue.use(VueScrollTo);
 
 export default {
   components: { LocaleSwitcher },
