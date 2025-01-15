@@ -4,6 +4,7 @@ export default {
   ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    titleTemplate: '%s - G-Tower',
     title: 'G-Tower',
     htmlAttrs: {
       lang: 'en',
@@ -143,4 +144,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Router configuration
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'privacy',
+        path: '/',
+        query: {
+          page_id: '4962'
+        },
+        component: resolve(__dirname, 'pages/privacy.vue')
+      })
+    },
+    middleware: ['pageId']
+  }
 }
