@@ -312,6 +312,10 @@
       "linkedin": "https://www.linkedin.com/company/g-tower/",
       "youtube": "https://www.youtube.com/@g-tower6904"
     },
-    "copyright": "[© 2023] G-Tower, All Rights Reserved."
-  }
+    "copyright": "[© 2023] G-Tower, All Rights Reserved.",
+    "privacy": {
+      "title": "Privacy Statement:",
+      "text": "This message, including any attachments, may contain confidential information intended only for the person(s) named above. Any attached file(s) are intended for reference purposes only. They are in no way to be taken as appurtenant to, associated with or in placement of hard copies of any file issued by our office. G-Tower Inc. is not responsible for edited or reproduced versions of this digital data. If you have received this communication in error, please erase all copies of the message and its attachments and notify us immediately."
+    }
+    }
 }

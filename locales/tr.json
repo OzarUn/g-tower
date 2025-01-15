@@ -307,6 +307,10 @@
             "linkedin": "https://www.linkedin.com/company/g-tower/",
             "youtube": "https://www.youtube.com/@g-tower6904"
         },
-        "copyright": "[© 2023] G-Tower, Tüm Hakları Saklıdır."
+        "copyright": "[© 2023] G-Tower, Tüm Hakları Saklıdır.",
+        "privacy": {
+            "title": "Gizlilik Beyanı:",
+            "text": "Ekler dahil olmak üzere bu mesaj, yalnızca yukarıda adı geçen kişi(ler) için özel bilgiler içerebilir. Ekli dosya(lar) yalnızca referans amaçlıdır. Bu dosyalar hiçbir şekilde ofisimiz tarafından düzenlenen herhangi bir dosyanın basılı kopyalarına ek olarak, bunlarla ilişkili olarak veya bunların yerine kullanılamaz. G-Tower Inc. bu dijital verilerin düzenlenmiş veya çoğaltılmış versiyonlarından sorumlu değildir. Bu iletişimi yanlışlıkla aldıysanız, lütfen mesajın ve eklerinin tüm kopyalarını silin ve bize derhal haber verin."
+        }
     }
 }
